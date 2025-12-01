@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC6BQTN6"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
- 
+
   <div class="container">
     <!-- Espacio para el logo -->
     <img src="img/logo.png" alt="Logo" style="width:240px" />
@@ -33,49 +33,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>¡Los mejores pasabocas más cerca de ti!</p>
   </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const enlaces = document.querySelectorAll('.link');
-
-  enlaces.forEach((btn, index) => {
-    
-    btn.addEventListener('click', () => {
-
-      // Definir el nombre del evento según el botón
-      let eventName = "";
-      let labelName = "";
-
-      switch (index) {
-        case 0:
-          eventName = "click_combos_navidenos";
-          labelName = "Combos navideños";
-          break;
-        case 1:
-          eventName = "click_menu";
-          labelName = "Menú";
-          break;
-        case 2:
-          eventName = "click_whatsapp_garupal";
-          labelName = "WhatsApp Garupal";
-          break;
-        case 3:
-          eventName = "click_whatsapp_la12";
-          labelName = "WhatsApp La 12";
-          break;
-      }
-
-      // Enviar evento a GA4
-      gtag('event', eventName, {
-        event_category: 'Enlaces',
-        event_label: labelName,
-        button_index: index + 1
-      });
-
-      console.log("Evento enviado:", eventName, "-", labelName);
-    });
-  });
-});
-</script>
 
 </body>
 </html>
