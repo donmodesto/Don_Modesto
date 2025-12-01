@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Don Modesto</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8ZRZCDYW6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8ZRZCDYW6');
+
+</script>
+</head>
+<body>
+  <div class="container">
+    <!-- Espacio para el logo -->
+    <img src="img/logo.png" alt="Logo" style="width:240px" />
+    <h3>¡Complice de tus momentos!</h3>
+
+    <!-- Reemplaza los # por tus enlaces reales -->
+    <a href="https://drive.google.com/file/d/18ObPUCJEYG6az3d7S2TWfGeNRzqxQzWj/view?usp=sharing" class="link">Combos Navideños 2025</a>
+    <a href="https://drive.google.com/file/d/13n17RwbIH-Iwph_wxsX4Vr7HNFWv_uyl/view?usp=sharing" class="link">Menú</a>
+    <a href="https://wa.me/message/LRA7QWEXFF2VH1" class="link">Whatsapp - Sede Garupal</a>
+    <a href="https://wa.me/message/NIXI7KXD5H7NB1" class="link">Whatsapp - Sede DM de la 12</a>
+      <p>¡Los mejores pasabocas más cerca de ti!</p>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const enlaces = document.querySelectorAll('.link');
+
+  enlaces.forEach((btn, index) => {
+    
+    btn.addEventListener('click', () => {
+
+      // Definir el nombre del evento según el botón
+      let eventName = "";
+      let labelName = "";
+
+      switch (index) {
+        case 0:
+          eventName = "click_combos_navidenos";
+          labelName = "Combos navideños";
+          break;
+        case 1:
+          eventName = "click_menu";
+          labelName = "Menú";
+          break;
+        case 2:
+          eventName = "click_whatsapp_garupal";
+          labelName = "WhatsApp Garupal";
+          break;
+        case 3:
+          eventName = "click_whatsapp_la12";
+          labelName = "WhatsApp La 12";
+          break;
+      }
+
+      // Enviar evento a GA4
+      gtag('event', eventName, {
+        event_category: 'Enlaces',
+        event_label: labelName,
+        button_index: index + 1
+      });
+
+      console.log("Evento enviado:", eventName, "-", labelName);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
