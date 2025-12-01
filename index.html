@@ -6,19 +6,15 @@
   <title>Don Modesto</title>
   <link rel="stylesheet" href="style.css">
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KC6BQTN6');</script>
-<!-- End Google Tag Manager -->
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC6BQTN6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-390W6Z88C4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-390W6Z88C4');
+</script>
 
   <div class="container">
     <!-- Espacio para el logo -->
@@ -32,6 +28,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://wa.me/message/NIXI7KXD5H7NB1" class="link">Whatsapp - Sede DM de la 12</a>
       <p>¡Los mejores pasabocas más cerca de ti!</p>
   </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const enlaces = document.querySelectorAll('.link');
+
+  enlaces.forEach((btn, index) => {
+    
+    btn.addEventListener('click', () => {
+
+      // Definir el nombre del evento según el botón
+      let eventName = "";
+      let labelName = "";
+
+      switch (index) {
+        case 0:
+          eventName = "click_combos_navidenos";
+          labelName = "Combos navideños";
+          break;
+        case 1:
+          eventName = "click_menu";
+          labelName = "Menú";
+          break;
+        case 2:
+          eventName = "click_whatsapp_garupal";
+          labelName = "WhatsApp Garupal";
+          break;
+        case 3:
+          eventName = "click_whatsapp_la12";
+          labelName = "WhatsApp La 12";
+          break;
+      }
+
+      // Enviar evento a GA4
+      gtag('event', eventName, {
+        event_category: 'Enlaces',
+        event_label: labelName,
+        button_index: index + 1
+      });
+
+      console.log("Evento enviado:", eventName, "-", labelName);
+    });
+  });
+});
+</script>
 
 
 </body>
