@@ -30,47 +30,42 @@
     <p>¡Los mejores pasabocas más cerca de ti!</p>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const enlaces = document.querySelectorAll('.link');
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const enlaces = document.querySelectorAll('.link');
 
-      enlaces.forEach((btn, index) => {
-        
-        btn.addEventListener('click', () => {
+  enlaces.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
 
-          let eventName = "";
-          let labelName = "";
+      let eventName = "";
+      let labelName = "";
 
-          switch (index) {
-            case 0:
-              eventName = "click_combos_navidenos";
-              labelName = "Combos navideños";
-              break;
-            case 1:
-              eventName = "click_menu";
-              labelName = "Menú";
-              break;
-            case 2:
-              eventName = "click_whatsapp_garupal";
-              labelName = "WhatsApp Garupal";
-              break;
-            case 3:
-              eventName = "click_whatsapp_la12";
-              labelName = "WhatsApp La 12";
-              break;
-          }
+      switch (index) {
+        case 0:
+          eventName = "click_menu";
+          labelName = "Menú";
+          break;
+        case 1:
+          eventName = "click_whatsapp_garupal";
+          labelName = "WhatsApp Garupal";
+          break;
+        case 2:
+          eventName = "click_whatsapp_la12";
+          labelName = "WhatsApp La 12";
+          break;
+      }
 
-          gtag('event', eventName, {
-            event_category: 'Enlaces',
-            event_label: labelName,
-            button_index: index + 1
-          });
-
-          console.log("Evento enviado:", eventName, "-", labelName);
-        });
+      gtag('event', eventName, {
+        event_category: 'Enlaces',
+        event_label: labelName,
+        button_index: index + 1
       });
+
     });
-  </script>
+  });
+});
+</script>
+
 
 </body>
 </html>
